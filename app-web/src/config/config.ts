@@ -6,15 +6,15 @@ import { getAuth } from 'firebase/auth';
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDFyqs03TDxkUDx977K5RqTRI4hx1bva5U",
+  apiKey: "AIzaSyDFyqsO3TDxkUDx977K5RqTRI4hx1bva5U",
   authDomain: "mov3-f.firebaseapp.com",
   databaseURL: "https://mov3-f-default-rtdb.firebaseio.com",
   projectId: "mov3-f",
-  storageBucket: "mov3.firebasestorage.app",
+  storageBucket: "mov3-f.firebasestorage.app",
   messagingSenderId: "362008093276",
-  appId: "1:36200809327:web:f1ece0acf65720beffc99",
-  measurementId: "G-YESPFLRSVK"
+  appId: "1:362008093276:web:f1ece0acf65720b2effc99"
 };
+
 
 
 const app = initializeApp(firebaseConfig);

@@ -1,15 +1,24 @@
 filtro:
-<input type="text" name="precio" [(ngModel)]="buscar">
+<input type="text" [(ngModel)]="buscar">
+
 @if (productos | async; as productos) {
-@for (producto of productos.servicio_medico; track producto) {
-@if (producto.info.precio == buscar + ' USD') {
-<div class="card">
-  <div class="card-header">{{producto.nombre}}</div>
-  <div class="card-body">
-    <img src={{producto.info.imagen}} width="200px" height="200px" alt="imagen"> <br>
-    <button (click)="guardar(producto)">Agregar </button>
-  </div>
-  <div class="card-footer">{{producto.info.precio}}</div>
-</div>
+  @for (producto of productos.servicio_medico; track producto.nombre) {
+
+    @if (!buscar || producto.info.precio.includes(buscar)) {
+
+      <div class="card">
+        <div class="card-header">{{producto.nombre}}</div>
+
+        <div class="card-body">
+          <img [src]="producto.info.imagen" width="200" height="200">
+          <br>
+          <button (click)="guardar(producto)">Agregar</button>
+        </div>
+
+        <div class="card-footer">{{producto.info.precio}}</div>
+      </div>
+
+    }
+
+  }
 }
-}}

@@ -9,6 +9,7 @@ import { CarritoPages } from './pages/carrito-pages/carrito-pages';
 import { DetallesPage } from './pages/detalles-page/detalles-page';
 
 export const routes: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
     {path: 'home', component: HomePage},
     {path: 'register', component: RegisterPage},
     {path: 'login', component: LoginPage},
