@@ -1,24 +1,32 @@
-filtro:
-<input type="text" [(ngModel)]="buscar">
+<div class="container">
+  <h2>Productos</h2>
 
-@if (productos | async; as productos) {
-  @for (producto of productos.servicio_medico; track producto.nombre) {
+  <div class="filtro">
+    <label>Filtrar:</label>
+    <input type="text" [(ngModel)]="buscar" placeholder="Ej: 10">
+  </div>
 
-    @if (!buscar || producto.info.precio.includes(buscar)) {
+  <div class="grid">
+    @if (productos | async; as productos) {
+      @for (producto of productos.servicio_medico; track producto.nombre) {
 
-      <div class="card">
-        <div class="card-header">{{producto.nombre}}</div>
+        @if (!buscar || producto.info.precio.includes(buscar)) {
 
-        <div class="card-body">
-          <img [src]="producto.info.imagen" width="200" height="200">
-          <br>
-          <button (click)="guardar(producto)">Agregar</button>
-        </div>
+          <div class="card">
+            <div class="card-header">{{producto.nombre}}</div>
 
-        <div class="card-footer">{{producto.info.precio}}</div>
-      </div>
+            <div class="card-body">
+              <img [src]="producto.info.imagen" width="200" height="200">
+              <br>
+              <button (click)="guardar(producto)">Agregar</button>
+            </div>
 
+            <div class="card-footer">{{producto.info.precio}}</div>
+          </div>
+
+        }
+
+      }
     }
-
-  }
-}
+  </div>
+</div>

@@ -1,37 +1,37 @@
 <div class="container">
-  <h2>Carrito</h2>
+    <h2>Carrito</h2>
 
-  <table class="tabla">
-    <thead>
-      <tr>
-        <th>Id</th>
-        <th>Nombre</th>
-        <th>Ciudad</th>
-        <th>Precio</th>
-        <th>Acciones</th>
-      </tr>
-    </thead>
+    <table class="tabla">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Ciudad</th>
+                <th>Precio</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
 
-    <tbody>
-      @for (carrito of carritoArreglo; track carrito.id) {
-      <tr>
-        <td>{{carrito.id}}</td>
-        <td>{{carrito.nombre}}</td>
-        <td>{{carrito.ciudad}}</td>
-        <td>{{carrito.precio}}</td>
-        <td>
-          <button class="btn-eliminar" (click)="eliminar(carrito.id)">Eliminar</button>
-          <a [routerLink]="['/detalles', carrito.id]">
-            <button class="btn-detalles">Detalles</button>
-          </a>
-        </td>
-      </tr>
-      }
+        <tbody>
+            @for (carrito of carritoArreglo; track carrito.id) {
+            <tr>
+                <td>{{carrito.id}}</td>
+                <td>{{carrito.nombre}}</td>
+                <td>{{carrito.ciudad}}</td>
+                <td>{{carrito.precio}}</td>
+                <td>
+                    <button class="btn-eliminar" (click)="eliminar(carrito.id)">Eliminar</button>
+                    <a [routerLink]="['/detalles', carrito.id]">
+                        <button class="btn-detalles">Detalles</button>
+                    </a>
+                </td>
+            </tr>
+            }
 
-      <tr class="total">
-        <td colspan="3"><strong>Total:</strong></td>
-        <td colspan="2">{{calcularTotal()}} USD</td>
-      </tr>
-    </tbody>
-  </table>
+            <tr class="total">
+                <td colspan="3"><strong>Total:</strong></td>
+                <td colspan="2">{{calcularTotal()}} USD</td>
+            </tr>
+        </tbody>
+    </table>
 </div>
