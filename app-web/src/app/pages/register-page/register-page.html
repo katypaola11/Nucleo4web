@@ -1,0 +1,9 @@
+<form (ngSubmit)="register(formulario)" #formulario="ngForm">
+    Correo:
+    <input type="text" name="email" [(ngModel)] = email > <br>
+
+    Contraseña: 
+    <input type="text" name="password" [(ngModel)] = password> <br>
+
+    <button type="submit">Registrar</button>
+</form>

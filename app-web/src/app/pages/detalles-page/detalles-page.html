@@ -1,0 +1,12 @@
+<form (ngSubmit)="editar(formulario)" #formulario="ngForm">
+    id:
+    <input type="text" name="parametro" [(ngModel)] = parametro> <br>
+    ciudad:
+    <input type="text" name="ciudad" [(ngModel)] = medico.ciudad> <br>
+    nombre:
+    <input type="text" name="nombre" [(ngModel)] = medico.nombre> <br>
+    precio:
+    <input type="text" name="precio"  [(ngModel)] = medico.precio>
+
+    <button type="submit">Editar</button>
+</form>

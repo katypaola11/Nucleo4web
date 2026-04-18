@@ -1,0 +1,34 @@
+<div class="container mt-3">
+    <h2>Carrito</h2>
+    <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+                <th>Id:</th>
+                <th>Nombre:</th>
+                <th>Ciudad:</th>
+                <th>Precio:</th>
+                <th>Acciones:</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @for (carrito of carritoArreglo; track carrito) {
+                <tr>
+                    <td>{{carrito.id}}</td>
+                    <td>{{carrito.nombre}}</td>
+                    <td>{{carrito.ciudad}}</td>
+                    <td>{{carrito.precio}}</td>
+                    <td>
+                        <button (click)="eliminar(carrito.id)">Eliminar</button>
+                        <a [routerLink]="['/detalles', carrito.id]"><button>Detalles</button></a>
+                    </td>
+                </tr>
+            }
+            <tr>
+                 <td>Total:</td>
+                <td>{{calcularTotal()}} USD</td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>

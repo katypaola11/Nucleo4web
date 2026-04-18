@@ -1,0 +1,14 @@
+@if (!accesso) {
+<form (ngSubmit)="login(formulario)" #formulario="ngForm">
+    Correo:
+    <input type="text" name="email" [(ngModel)] = email > <br>
+
+    Contraseña: 
+    <input type="text" name="password" [(ngModel)] = password> <br>
+
+    <button type="submit">Login</button>
+</form>
+}@else {
+    <br>
+<button type="submit" (click)="logout()">Cerrar Sesion</button>
+}
